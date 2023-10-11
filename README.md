@@ -10,3 +10,6 @@ Read and write multiple types of files
 
 - log
     - logger
+ 
+## install 
+pip install git+https://github.com/MrRabbit2MissCat/mmfio.git
