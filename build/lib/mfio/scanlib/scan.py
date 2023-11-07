@@ -5,7 +5,6 @@
 # -------------------------------------------------------------------------------
 import os
 from pathlib import Path
-from collections import defaultdict
 
 
 class Scan:
@@ -13,7 +12,7 @@ class Scan:
     文件检索匹配
     """
 
-    def __init__(self, path, suffixs: list = [".png", ".jpg", ".jpeg", ".bmp"], depth=2) -> None:
+    def __init__(self, path, suffixs: list = [".png", ".jpg", ".jpeg", ".bmp"], depth=0) -> None:
         self._path = path
         self._suffixs = suffixs
         self._depth = depth
@@ -21,7 +20,7 @@ class Scan:
         self._scan_files()
 
     @staticmethod
-    def parent_name(file_path, parent_num=2):
+    def parent_name(file_path, parent_num=0):
         file_path = Path(file_path)
         return f"{'/'.join(file_path.parts[-parent_num:-1])}/{file_path.stem}"
 
@@ -32,7 +31,7 @@ class Scan:
                 if file_path.suffix in self._suffixs:
                     self._name_files[self.parent_name(file_path, self._depth)] = file_path
 
-    def match_file(self, file, parent_num=2):
+    def match_file(self, file, parent_num=0):
         return self._name_files.get(self.parent_name(file, parent_num))
 
     @property

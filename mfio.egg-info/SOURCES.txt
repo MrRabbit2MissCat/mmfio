@@ -11,10 +11,13 @@ mfio/iolib/base.py
 mfio/iolib/excel.py
 mfio/iolib/img.py
 mfio/iolib/json.py
+mfio/iolib/mcsv.py
 mfio/iolib/txt.py
 mfio/iolib/xml.py
 mfio/iolib/yaml.py
 mfio/scanlib/__init__.py
 mfio/scanlib/scan.py
 mfio/utils/__init__.py
+mfio/utils/download.py
 mfio/utils/log.py
+mfio/utils/print_table.py
