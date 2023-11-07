@@ -10,9 +10,3 @@ Read and write multiple types of files
 
 - log
     - logger
-
-
-## usage
-python setup.py sdist bdist_wheel
-
-twine upload dist/*
